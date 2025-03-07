@@ -5,4 +5,23 @@ git config --global core.autocrlf input		（一半自动转换）git在提交时
 git config --global core.autocrlf false		（不自动转换）git在提交和检出时都不做操作
 
 
+-----------------------------------------------------------------------------------------------------------------------
+仓库配置
+SSH仓库需要私有密钥和公钥
+
+在本地生成SSH密钥
+cd			回到用户根目录
+cd .ssh			打开.ssh文件夹
+ssh-keygen -t rsa -b 4096	生成ssh密钥，-t表示协议为RSA协议，-b表示大小为4096
+			然后输入密钥的文件名称（不要和之前创建的重复，重复的话会覆盖之前的，这会使之前的密钥丢失）
+			之后输入密码（我们设置的这个密钥的密码）
+设置好后会生成两个文件，打开.pub这个文件复制这个公钥到GitHub上
+之后设置在使用github的时候使用这个文件做密钥
+vi config			打开.ssh文件夹中的config文件（如果没有就创建），输入以下内容：
+			# github
+			Host github.com
+			HostName github.com
+			PreferredAuthentications publickey
+			IdentityFile ~/.ssh/密钥文件名称
+
 
