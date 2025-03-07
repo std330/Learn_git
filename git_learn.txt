@@ -1,0 +1,8 @@
+----------------------------------------------------------------------------------------------------------------------
+回车和换行
+git config --global core.autocrlf true		（自动转换）git在提交的时候把回车CR换行LF 自动变成 换行LF，在检出LF时变成CRLF
+git config --global core.autocrlf input		（一半自动转换）git在提交时不转换，在检出时都自动把CRLF转换成LF
+git config --global core.autocrlf false		（不自动转换）git在提交和检出时都不做操作
+
+
+
