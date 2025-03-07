@@ -1,0 +1,7 @@
+*.vs
+*.pdf
+*.jpg
+*.tmp
+temp/
+sta5.txt
+
